@@ -7,7 +7,7 @@ All code by Krusty (Romain Giot).
 
 = iDSK =
 
-* Original dsk code from cpcemu by Marco Vieth,
-* Some modifications by Demoniak in his ManageDSK project,
-* Conversion to C++/UNIX by Sid,
-* Debugging and extra features by PulkoMandy.
+  * Original dsk code from cpcemu by Marco Vieth,
+  * Some modifications by Demoniak in his ManageDSK project,
+  * Conversion to C++/UNIX by Sid,
+  * Debugging and extra features by PulkoMandy.
