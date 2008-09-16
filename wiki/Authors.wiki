@@ -2,7 +2,7 @@
 
 = Font Catcher / Font Aligner =
 
-All code by Krusty (Romain Giot).
+* All code by Krusty (Romain Giot).
 
 
 = iDSK =
@@ -11,3 +11,7 @@ All code by Krusty (Romain Giot).
   * Some modifications by Demoniak in his ManageDSK project,
   * Conversion to C++/UNIX by Sid,
   * Debugging and extra features by PulkoMandy.
+
+= CPCTools =
+ * Original code by Ramlaid/Arkos
+ * Linux adaptation by Krusty/Benediction
