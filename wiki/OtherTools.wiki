@@ -1,0 +1,6 @@
+#summary Some other tools you may find useful
+
+  * libdsk
+  * sjasmplus
+  * dsktools http://dsktools.berlios.de
+  * Arnold http://arnold.berlios.de
