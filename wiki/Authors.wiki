@@ -1,17 +1,22 @@
 #summary See who did what in this project
 
-= Font Catcher / Font Aligner =
-
- * All code by Krusty (Romain Giot).
-
-
-= iDSK =
-
-  * Original dsk code from cpcemu by Marco Vieth,
-  * Some modifications by Demoniak in his ManageDSK project,
-  * Conversion to C++/UNIX by Sid,
-  * Debugging and extra features by PulkoMandy.
-
 = CPCTools =
+ * Some routines stolen from Caprice
  * Original code by Ramlaid/Arkos
  * Linux adaptation by Krusty/Benediction
+
+= Font Catcher / Font Aligner =
+ * All code by Krusty (Romain Giot).
+
+= Hideur Maikeur =
+ * All code by Downwater (Mounir Aittahar)
+
+= iDSK =
+ * Original dsk code from cpcemu by Marco Vieth,
+ * Some modifications by Demoniak in his ManageDSK project,
+ * Conversion to C++/UNIX by Sid,
+ * Debugging and extra features by PulkoMandy.
+
+= ufitoolbox =
+ * Based on ufiformat 0.9.4
+ * Tweaking and extended low-level handling added by PulkoMandy
