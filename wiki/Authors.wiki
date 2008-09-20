@@ -1,5 +1,12 @@
 #summary See who did what in this project
 
+= Caprice Reloaded =
+ * Original code by Ulrich Doewich
+ * C++ conversion by Ramlaid
+ * Linux port by Krusty
+ * gcc4.3 and amd64 fixes by PulkoMandy
+ * WxWidgets interface by Krusty and Cloudstrife
+
 = CPCTools =
  * Some routines stolen from Caprice
  * Original code by Ramlaid/Arkos
