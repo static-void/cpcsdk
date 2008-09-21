@@ -15,6 +15,9 @@
 = Font Catcher / Font Aligner =
  * All code by Krusty (Romain Giot).
 
+= gfx2crtc =
+ * Code by cloudstrife.
+
 = Hideur Maikeur =
  * All code by Downwater (Mounir Aittahar)
 
