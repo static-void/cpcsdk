@@ -6,5 +6,5 @@ This table should be useful for developpers to get some hints about the problems
 
 = Details =
 ||Program||Description of problem||
-||Parasites||Part 1 will not run. Black screen and register aren't moving at all.||
+||Parasites||Part 1 will not run. Black screen and register aren't moving at all. The original Backtro is working fine.||
 ||Demoizart||Landscape part samples are broken. Critical Area has some problems, the splitting on the logo seems to happen too early.||
