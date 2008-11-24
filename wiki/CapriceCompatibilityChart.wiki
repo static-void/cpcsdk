@@ -1,0 +1,10 @@
+#summary List of CPC programs that work and that don't in CapriceReloaded
+
+= Introduction =
+This table should be useful for developpers to get some hints about the problems that may be lying around in the emulator code. If you find something that does not work, please add it to the list so we can investigate. Please provide any information you may have.
+
+
+= Details =
+||Program||Description of problem||
+||Parasites||Part 1 will not run. Black screen and register aren't moving at all.||
+||Demoizart||Landscape part samples are broken. Critical Area has some problems, the splitting on the logo seems to happen too early.||
