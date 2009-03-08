@@ -1,0 +1,17 @@
+#summary Instructions to build caprice
+#labels Phase-Deploy
+
+You need wxWidget headers, lib765 and libdsk
+
+  * StSoundLib
+{{{
+cd cpctools/lib/StSoundLib_Release/StSoundLibrary/
+./configure && make && sudo make install
+}}}
+
+ * installation
+{{{
+./configure
+make
+make install
+}}}
