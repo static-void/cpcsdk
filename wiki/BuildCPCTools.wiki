@@ -1,4 +1,4 @@
-#How to build the cpctools chain
+#summary How to build the cpctools chain
 
 CPCtools are in the folder cpctools at the root of the trunk.
 
