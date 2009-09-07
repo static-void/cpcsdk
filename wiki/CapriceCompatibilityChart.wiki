@@ -23,3 +23,4 @@ We only have CRTC0 emulation... but maybe it isn't perfect in some cases ?
 ||Program||Description of problem||
 ||Demoizart, Landscape part||sound samples are broken||
 ||Climax||Stay locked at end of intro||
+||Climax G||Screen goes out of sync in some of the loading screens. May be related to the extreme settings used (reg0=127,...) and the use of GT65 sync that may not work on a CTM644||
