@@ -40,6 +40,14 @@ The executable is put in output/bin/ . I know no way to install it to a more pra
 =Caprice itself (finally !)=
 This is the recommended setting if you want to use caprice as a CPC emulator. Lib765 gives troubles and don't add extra functionality. Debug is useless unless you want to help us clean our code...
 You can use other options for ./configure if you want to try things. But it will probably break things or make them run slower.
+
+If you got the files from svn, you have to build the configure script before doing anything else. This is not needed if you want to use an archive from the download page, we have done it for you in this case.
+{{{
+autoreconf
+autoconf
+}}}
+
+Now the steps that are actually needed for everyone :
 {{{
 ./configure --without-lib765 --without-debug
 make
