@@ -5,8 +5,21 @@ This table should be useful for developpers to get some hints about the problems
 
 
 = Details =
+
+== Lib765 related problems ==
+We have support fr lib765 as the FDC emulation backend. This should allow to use real floppies directly from within the emulator. However it does not work as well as the original FDC code from caprice.
 ||Program||Description of problem||
-||Parasites||Part 1 will not run. Black screen and register aren't moving at all. The original Backtro is working fine. Works with old fdc rout.||
-||Demoizart||Landscape part samples are broken. Critical Area has some problems, the splitting on the logo seems to happen too early.||
+||Parasites||Part 1 will not run. Black screen and z80 registers aren't moving at all. The original Backtro is working fine. Works with old fdc rout.||
 ||Midline Process||Don't work with lib765/libdsk (read error), work with old fdc routine.||
 ||Orion Prime Teaser||Don't work with lib765/libdsk (read error), work with old fdc routine.||
+
+==CRTC problems==
+We only have CRTC0 emulation... but maybe it isn't perfect in some cases ?
+||Program||Description of problem||
+||Demoizart, Critical Area||screen splitting on the logo seems to happen too early||
+||From Scratch||CTRC1 only, we only have CRTC0||
+
+== Other/uncategorized problems ==
+||Program||Description of problem||
+||Demoizart, Landscape part||sound samples are broken||
+||Climax||Stay locked at end of intro||
