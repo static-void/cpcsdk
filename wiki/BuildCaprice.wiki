@@ -1,17 +1,21 @@
 #summary Instructions to build caprice
 #labels Phase-Deploy
 
-You need wxWidget headers, lib765 and libdsk
+You need wxWidget headers.
+lib765 and libdsk can be used but they are optional.
 
-  * StSoundLib
+=StSoundLib=
+Don't use a version of StSoundLib you found somewhere else on the internet ! The one in our repository was fixed to sound more like a real CPC. The volume tables in he original are strange and the mixing is weird too.
 {{{
 cd cpctools/lib/StSoundLib_Release/StSoundLibrary/
 ./configure && make && sudo make install
 }}}
 
  * installation
+This is the recommended setting if you want to use caprice as a CPC emulator. Lib765 gives troubles and don't add extra functionality. Debug is useless unless you want to help us clean our code...
+You can use other options for ./configure if you want to try things. But it will probably break things or make them run slower.
 {{{
-./configure
+./configure --without-lib765 --without-debug
 make
 make install
 }}}
