@@ -43,8 +43,11 @@ You can use other options for ./configure if you want to try things. But it will
 
 If you got the files from svn, you have to build the configure script before doing anything else. This is not needed if you want to use an archive from the download page, we have done it for you in this case.
 {{{
+aclocal
+autoheader
 autoreconf
 autoconf
+automake
 }}}
 
 Now the steps that are actually needed for everyone :
