@@ -52,7 +52,7 @@ automake
 
 Now the steps that are actually needed for everyone :
 {{{
-./configure --without-lib765 --disable-debug
+./configure
 make
 make install
 }}}
