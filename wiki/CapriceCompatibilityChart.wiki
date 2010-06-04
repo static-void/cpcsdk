@@ -19,7 +19,7 @@ We have support fr lib765 as the FDC emulation backend. This should allow to use
 ||Discology||When accessing editor, keeps reading something on the disk, looks like it's a not existing sector||
 ||Working backwards||Game 2 and 3 on side A are not loading and reset the CPC||
 ||zania||fails to display the catalog on first try, works on second try.||
-||Orion Prime||Asks to insert side 1 while it's in the drive.||
+||5kb demo 3||Musical loader doesn't work.||
 
 ==CRTC problems==
 We only have CRTC0 emulation... but maybe it isn't perfect in some cases ?
@@ -41,3 +41,7 @@ We only have CRTC0 emulation... but maybe it isn't perfect in some cases ?
 ||Demoizart, Landscape part||sound samples are broken||
 ||Climax G||Screen goes out of sync in some of the loading screens. May be related to the extreme settings used (reg0=127,...) and the use of GT65 sync that may not work on a CTM644. Note that it doesn't work either on some real GT65...||
 ||RTS||The rotozoom doesn't work, and after it the demo crashes.||
+
+== Working Fine ==
+ * Parasites
+ * Orion Prime
