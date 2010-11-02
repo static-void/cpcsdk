@@ -9,9 +9,9 @@ This makefile supports :
 
 Images are crunched automatically.
 Improvements needed : 
-  *find a way to use datalinker for handling the alignment of data (i'm doing it with sjasm by hand). Need to define the addresses before the code is actually compiled ?
-  *relocate compiled starkos musics so you don't have to bother about their address. work in progress, see the relsong tool.
-  *output a snapshot and run it inside caprice
+  * find a way to use datalinker for handling the alignment of data (i'm doing it with sjasm by hand). Need to define the addresses before the code is actually compiled ?
+  * relocate compiled starkos musics so you don't have to bother about their address. work in progress, see the relsong tool.
+  * output a snapshot and run it inside caprice
 
 Note caps are used because of cpcfs bugs... If you use iDSK only it should be fine.
 
