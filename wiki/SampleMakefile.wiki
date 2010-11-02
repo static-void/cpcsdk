@@ -1,9 +1,11 @@
+#summary A sample makefile for use in CPC cross-development projects
+
 This is an example of how to use the cpcsdk tools in your projects. Actually its the makefile from the Znax game (still to be released).
 You can get an idea of how to use the tools together to make a practical devkit and just type :make in vim.
 This makefile supports :
-  *Directly writing output files to an usb floppy drive using a parados formatted disk
-  *Making a dsk then copying it to a 720k dos drive (to be put to a real disk with writedsk on a real cpc
-  *Just output a dsk you can run in your emulator
+  * Directly writing output files to an usb floppy drive using a parados formatted disk
+  * Making a dsk then copying it to a 720k dos drive (to be put to a real disk with writedsk on a real cpc
+  * Just output a dsk you can run in your emulator
 
 Images are crunched automatically.
 Improvements needed : 
