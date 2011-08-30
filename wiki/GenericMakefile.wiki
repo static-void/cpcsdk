@@ -10,66 +10,68 @@ Note it is still work in progress, so there are some rough edges.
 
 # TODO
 # * We need an output module that generates AMSDOS files (or hack that in the 
-# vasm "bin" output module, which already does it for C64). This way, we don't
-# have to use cpcfs to create the header, and we don't have to put it in the 
-# command line. So we can make the commands generic with some xargs magic.
-# This can be done with hideur maikeur in the meantime.
+#	vasm "bin" output module, which already does it for C64). This way, we don't #	have to use cpcfs to create the header, and we don't have to put it in the 
+#	command line. So we can make the commands generic with some xargs magic.
+#	This MAY be possible to do with a linker script ?
 # * I usually do incbin "something.exo" in my sourcecode, but this doesn't get 
-# in the makefile dependancies. Either add something equivalent to gcc -M in 
-# vasm, or find another way... (grep INCBIN + generate dependencies ?)
+#	in the makefile dependancies. Either add something equivalent to gcc -M in 
+#	vasm, or find another way... (grep INCBIN + generate dependencies ?)
 
 # USER SETTINGS ################################################################
 
 # Enter your demo name here
-NAME:=TESTDEMO
+NAME:=TTYS0
 
 # Main rule
 # * $(NAME).dsk to build a dsk, or
 # * emu to also run it in the emulator
 ALL: $(NAME).dsk
 
+# Set disk contents
+$(NAME).dsk:: $(NAME).BIN LOADER.BIN
+
 # List the sourcefiles for your main code. This is currently statically linked
 # at &300 and (hopefully) loaded there by the loader code.
 # TODO use a target variable for the address, and get it from VASM/VLINK somehow
-$(NAME).BIN:: main.o
+$(NAME).exe:: main.o
 $(NAME).BIN: START = 0x300
 
 # List the dependancies for LOADER.BIN. Linked at &9000
-LOADER.BIN: loader.o deexo.o
+LOADER.exe: loader.o deexo.o
 LOADER.BIN: START = 0x9000
 
 # define screenmode for each picture
-logo.scr: SCREENMODE = 1
+shrlogo.scr: SCREENMODE = 1
 
-# This adds logo.exo to the dependancies of loader.o. Assumes it will be
+# This adds shrlogo.exo to the dependancies of loader.o. Assumes it will be
 # INCBIN there...
-loader.o:: logo.exo
+loader.o:: shrlogo.exo
 
-# NOT YET GENERIC RULES ########################################################
+# TODO - move everything below to a generic cpc.mk file...
+# GENERIC RULES ###############################################################
 
+# Nice header for doing something
 BECHO = @echo -e "\x1B[7m\t$(1)\t\x1B[0m"
 
 # Build the DSK-File (main rule)
-# Maybe using :: rules would be better, but it prevents formatting the disk 
-# everytime (since :: rules are unordered). Unless we set a FILECREATED variable
-# on the file once it's created ?
-$(NAME).dsk: $(NAME).BIN LOADER.BIN
+%.dsk:
 	$(call BECHO, "Putting files in DSK...")
 	cpcfs $@ f
-	cpcfs $@ p $(NAME).BIN,0x300,0x300 -b -e
-	cpcfs $@ p LOADER.BIN,0x9000,0x9000 -b -e
-	
-# TODO - move everything below to a generic cpc.mk file...
-# GENERIC RULES ###############################################################
+	for i in $^;do cpcfs $@ p $$i;done;
 
 # Run the emulator
 emu: $(NAME).dsk
 	$(call BECHO,"Running caprice...")
 	caprice -a $< &
 
+# Prepend header
+# TODO entry point
+%.BIN: %.exe
+	hideur $< -o $@ -l $(START)
+
 # Link the sources ($^ means "all dependencies", so all of them should be .o 
 # files - which is good, since anything else should be incbined somewhere)
-%.BIN:
+%.exe:
 	$(call BECHO,"Linking $@")
 	vlink -b rawbin1 -T rawlink.ld -Ttext $(START) -M -o $@ $^
 
@@ -92,7 +94,7 @@ emu: $(NAME).dsk
 
 clean:
 	$(call BECHO,"Cleaning...")
-	rm *.exo *.BIN *.dsk *.o
+	rm *.exo *.BIN *.dsk *.o *.exe
 }}}
 
 = Linker =
