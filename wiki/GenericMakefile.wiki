@@ -5,14 +5,10 @@ This makefile allows to build any project using cpcsdk tools.
 Note it is still work in progress, so there are some rough edges.
 
 {{{
-# "generic" makefile
+# generic CPC-project makefile
 # Copyright 2011 PulkoMandy - Shinra!
 
 # TODO
-# * We need an output module that generates AMSDOS files (or hack that in the 
-#	vasm "bin" output module, which already does it for C64). This way, we don't #	have to use cpcfs to create the header, and we don't have to put it in the 
-#	command line. So we can make the commands generic with some xargs magic.
-#	This MAY be possible to do with a linker script ?
 # * I usually do incbin "something.exo" in my sourcecode, but this doesn't get 
 #	in the makefile dependancies. Either add something equivalent to gcc -M in 
 #	vasm, or find another way... (grep INCBIN + generate dependencies ?)
@@ -21,11 +17,6 @@ Note it is still work in progress, so there are some rough edges.
 
 # Enter your demo name here
 NAME:=TTYS0
-
-# Main rule
-# * $(NAME).dsk to build a dsk, or
-# * emu to also run it in the emulator
-ALL: $(NAME).dsk
 
 # Set disk contents
 $(NAME).dsk:: $(NAME).BIN LOADER.BIN
@@ -49,6 +40,8 @@ loader.o:: shrlogo.exo
 
 # TODO - move everything below to a generic cpc.mk file...
 # GENERIC RULES ###############################################################
+
+.DEFAULT_GOAL := $(NAME).dsk
 
 # Nice header for doing something
 BECHO = @echo -e "\x1B[7m\t$(1)\t\x1B[0m"
