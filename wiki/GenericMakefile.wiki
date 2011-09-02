@@ -16,14 +16,13 @@ Note it is still work in progress, so there are some rough edges.
 # USER SETTINGS ################################################################
 
 # Enter your demo name here
-NAME:=TTYS0
+NAME:=TESTDEMO
 
 # Set disk contents
 $(NAME).dsk:: $(NAME).BIN LOADER.BIN
 
-# List the sourcefiles for your main code. This is currently statically linked
+# List the sourcefiles for your main code. This is linked
 # at &300 and (hopefully) loaded there by the loader code.
-# TODO use a target variable for the address, and get it from VASM/VLINK somehow
 $(NAME).exe:: main.o
 $(NAME).BIN: START = 0x300
 
@@ -66,7 +65,7 @@ emu: $(NAME).dsk
 # files - which is good, since anything else should be incbined somewhere)
 %.exe:
 	$(call BECHO,"Linking $@")
-	vlink -b rawbin1 -T rawlink.ld -Ttext $(START) -M -o $@ $^
+	vlink -b rawbin1 -Ttext $(START) -M -o $@ $^
 
 # Assemble the sources
 %.o: %.z80
@@ -90,21 +89,8 @@ clean:
 	rm *.exo *.BIN *.dsk *.o *.exe
 }}}
 
-= Linker =
-The linker script for vlink :
-
-{{{
-SECTIONS
-{
-	.text : { *.o(*) }
-}
-}}}
-
-This means "put everything from .o files in the .text section".
-
 = Assembler =
 some notes about vasm :
- * you have to put ORG 0 at the beginning of all your sourcefiles. The linker will remap them to the proper address. This ORG will not be needed anymore in a future release of vasm (I'm testing the patch right now)
  * By default symbols are local to a file. To export a symbol 'ASymbol' you have to do this in your sourcefile :
 {{{
     GLOBAL ASymbol
