@@ -18,7 +18,7 @@ This is not needed if you just want to build and use caprice, it is the tool we 
 svn co https://wxformbuilder.svn.sourceforge.net/svnroot/wxformbuilder/3.x/trunk wxformbuilder
 }}}
 
-Now patch the files as follow (or get the [http://cpcsdk.googlecode.com/files/wxformbuilder.patch patch] and apply it) :
+Now patch the files as follow (or get the [http://cpcsdk.googlecode.com/files/wxformbuilder_r2024.patch patch] and apply it) :
 ||file||line||change||
 ||output/xml/default.xml||20||property use_enum should be type "text" instead of "bool"||
 ||src/codegen/cppcg.cpp||471||useEnum should be int instead of bool and initialized to 0 intead of false||
