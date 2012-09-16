@@ -95,5 +95,5 @@ We will be using cmake again to generate the build files.
 mkdir build
 cd build
 cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
-make
+nmake
 }}}
